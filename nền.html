@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* --- PHẦN MENU GIỮ NGUYÊN --- */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #d30d0d; /* Màu đỏ nền chuyên nghiệp hơn */
+        }
+
+        .navbar {
+            background-color: #1C3FAA;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar.show { transform: translateY(0); }
+
+        #trigger-zone {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 20px;
+            z-index: 999;
+        }
+
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #F1F5F8;
+            padding: 16px 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover { background-color: #3160D8; }
+
+        /* --- PHẦN NỘI DUNG SỬA MỚI CHO ĐẸP --- */
+        .container {
+            max-width: 800px;
+            margin: 80px auto 40px; /* Cách menu 80px */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-title {
+            color: yellow;
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px #000;
+            margin-bottom: 30px;
+        }
+
+        /* Bảng danh sách bài học */
+        .lesson-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px; /* Khoảng cách giữa các bài */
+        }
+
+        .lesson-row {
+            background-color: #FFD700; /* Vàng Gold rực rỡ */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+
+        .lesson-row:hover {
+            transform: scale(1.03);
+            background-color: #fff;
+            box-shadow: 6px 6px 0px yellow;
+        }
+
+        .lesson-row td {
+            padding: 20px;
+            border: 2px solid #000;
+        }
+
+        .lesson-row td:first-child {
+            border-radius: 10px 0 0 10px;
+            width: 40%;
+            border-right: none;
+        }
+
+        .lesson-row td:last-child {
+            border-radius: 0 10px 10px 0;
+            border-left: 1px dashed #000;
+        }
+
+        .lesson-row a {
+            text-decoration: none;
+            color: #d30d0d;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .lesson-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .btn-home {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: #000;
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            border: 2px solid yellow;
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            background-color: yellow;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="trigger-zone"></div>
+    <nav class="navbar" id="myNavbar">
+        <ul>
+            <li><a href="Trang chủ.html">Trang chủ</a></li>
+            <li><a href="Giới thiệu.html">Giới thiệu</a></li>
+            <li><a href="Bắt đầu.html">Bài học</a></li>
+            <li><a href="donate.html" style="color: #FBC500;">Donate</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-title">Các Bài Học Giao Tiếp</div>
+
+        <table class="lesson-table">
+            <tr class="lesson-row" onclick="window.location.href='2.1.html'">
+                <td><a href="2.1.html">УРОК 1 - Bài 1</a></td>
+                <td class="lesson-name">Gặp người mới</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 2'">
+                <td><a href="bài 2">УРОК 2 - Bài 2</a></td>
+                <td class="lesson-name">Thành viên gia đình</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 3'">
+                <td><a href="bài 3">УРОК 3 - Bài 3</a></td>
+                <td class="lesson-name">Cảm giác và cảm xúc</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 4'">
+                <td><a href="bài 4">УРОК 4 - Bài 4</a></td>
+                <td class="lesson-name">Các ngày trong tuần</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 5'">
+                <td><a href="bài 5">УРОК 5 - Bài 5</a></td>
+                <td class="lesson-name">Các tháng trong năm</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 6'">
+                <td><a href="bài 6">УРОК 6 - Bài 6</a></td>
+                <td class="lesson-name">Quần áo</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 7'">
+                <td><a href="bài 7">УРОК 7 - Bài 7</a></td>
+                <td class="lesson-name">Các bữa ăn</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 8'">
+                <td><a href="bài 8">УРОК 8 - Bài 8</a></td>
+                <td class="lesson-name">Động vật</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 9'">
+                <td><a href="bài 9">УРОК 9 - Bài 9</a></td>
+                <td class="lesson-name">Màu sắc</td>
+            </tr>
+            <tr class="lesson-row" onclick="window.location.href='bài 10'">
+                <td><a href="bài 10">УРОК 10 - Bài 10</a></td>
+                <td class="lesson-name">Lớp học</td>
+            </tr>
+        </table>
+
+        <a href="Trang chủ.html" class="btn-home">TRANG CHỦ</a>
+    </div>
+
+    <audio id="bgMusic" loop autoplay>
+        <source src="nhạc nền.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const navbar = document.getElementById('myNavbar');
+        const triggerZone = document.getElementById('trigger-zone');
+
+        triggerZone.addEventListener('mouseenter', () => {
+            navbar.classList.add('show');
+        });
+
+        navbar.addEventListener('mouseenter', () => {
+            navbar.classList.add('show');
+        });
+
+        navbar.addEventListener('mouseleave', () => {
+            navbar.classList.remove('show');
+        });
+    </script>
+</body>
+</html>

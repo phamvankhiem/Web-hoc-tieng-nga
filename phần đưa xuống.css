@@ -1,0 +1,108 @@
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #d30d0d; /* Màu đỏ chủ đạo */
+            color: white;
+            padding-bottom: 50px;
+        }
+
+        /* 1. MENU TRƯỢT (ẨN/HIỆN) */
+        .navbar {
+            background-color: #000; /* Màu đen để làm nổi bật vàng */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border-bottom: 3px solid #FFD700;
+            transform: translateY(-100%); 
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .navbar.show { transform: translateY(0); }
+
+        #trigger-zone {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 15px;
+            z-index: 999;
+        }
+
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #FFD700;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .navbar a:hover { background-color: #FFD700; color: #000; }
+
+        /* 2. TIÊU ĐỀ CHÍNH */
+        .header-title {
+            text-align: center;
+            color: #FFD700;
+            font-size: 50px;
+            margin: 80px 0 40px 0;
+            text-shadow: 3px 3px 0px #000;
+            text-transform: uppercase;
+        }
+
+        /* 3. BẢNG BÀI HỌC */
+        .lesson-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0 15px; /* Khoảng cách giữa các hàng */
+            width: 90%;
+        }
+
+        .lesson-row {
+            background: #FFD700;
+            color: #000;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        .lesson-row:hover {
+            transform: scale(1.02);
+            box-shadow: 8px 8px 0px #fff;
+        }
+
+        .lesson-num {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 900;
+            width: 35%;
+            border-radius: 10px 0 0 10px;
+            text-align: center;
+        }
+
+        .lesson-num a {
+            color: #d30d0d;
+            text-decoration: none;
+        }
+
+        .lesson-name {
+            padding: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 0 10px 10px 0;
+            border-left: 2px solid rgba(0,0,0,0.1);
+        }
+
+        /* 4. NÚT TRANG CHỦ */
+        .home-link {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            color: #FFD700;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .home-link:hover { text-decoration: underline; }
