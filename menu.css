@@ -1,0 +1,49 @@
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ĐỊNH DẠNG THANH MENU */
+        .navbar {
+            background-color: #1C3FAA;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            /* LỆNH ẨN: Đẩy menu lên trên (chiều cao menu khoảng 55px) */
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà */
+        }
+
+        /* LỆNH HIỆN: Khi có class 'show', menu sẽ trượt xuống */
+        .navbar.show {
+            transform: translateY(0);
+        }
+
+        /* Vùng cảm ứng: Một dải vô hình ở sát mép trên màn hình */
+        #trigger-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Độ nhạy: rê chuột vào 20px trên cùng sẽ hiện menu */
+            z-index: 999;
+            /* background: rgba(255,0,0,0.2); // Bật dòng này nếu bạn muốn thấy vùng cảm ứng */
+        }
+
+        /* Định dạng nội dung bên trong menu (giữ nguyên từ trước) */
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #F1F5F8;
+            padding: 16px 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover { background-color: #3160D8; }
+
+        .content { padding: 20px; margin-top: 20px; }

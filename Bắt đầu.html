@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+   <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ĐỊNH DẠNG THANH MENU */
+        .navbar {
+            background-color: #1C3FAA;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            /* LỆNH ẨN: Đẩy menu lên trên (chiều cao menu khoảng 55px) */
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà */
+        }
+
+        /* LỆNH HIỆN: Khi có class 'show', menu sẽ trượt xuống */
+        .navbar.show {
+            transform: translateY(0);
+        }
+
+        /* Vùng cảm ứng: Một dải vô hình ở sát mép trên màn hình */
+        #trigger-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Độ nhạy: rê chuột vào 20px trên cùng sẽ hiện menu */
+            z-index: 999;
+            /* background: rgba(255,0,0,0.2); // Bật dòng này nếu bạn muốn thấy vùng cảm ứng */
+        }
+
+        /* Định dạng nội dung bên trong menu (giữ nguyên từ trước) */
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #F1F5F8;
+            padding: 16px 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover { background-color: #3160D8; }
+
+        .content { padding: 20px; margin-top: 20px; }
+    </style>
+    </style>
+</head>
+<body style="background-color: red">
+<h2 style="color:yellow">
+<center>
+  <caption><font size="9">CÁC BÀI HỌC GIAO TIẾP</font></caption>
+  <tr>
+     <td><a href="2.1.html" style="color:#00FFFF"> <center><font size="6">УРОК 1-Bài 1</font></center></a></td>
+     <td><center><font size="3">GẶP NGƯỜI MỚI </font></center></td>
+  </tr><tr<tr>
+     <td><a href="bài 2" style="color:#00FFFF"> <center><font size="6">УРОК 2-Bài 2</font></center></a></td>
+     <td><center><font size="3">THÀNH VIÊN GIA ĐÌNH</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 3" style="color:#00FFFF"> <center><font size="6">УРОК 3-Bài 3</font></center></a></td>
+     <td><center><font size="3">CẢM GIÁC VÀ CẢM XÚC</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 4" style="color:#00FFFF"> <center><font size="6">УРОК 4-Bài 4</font></center></a></td>
+     <td><center><font size="3">CÁC NGÀY TRONG TUẦN</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 5" style="color:#00FFFF"> <center><font size="6">УРОК 5-Bài 5</font></center></a></td>
+     <td><center><font size="3">CÁC THÁNG TRONG NĂM</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 6" style="color:#00FFFF"> <center><font size="6">УРОК 6-Bài 6</font></center></a></td>
+     <td><center><font size="3">QUẦN ÁO</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 7" style="color:#00FFFF"> <center><font size="6">УРОК 7-Bài 7</font></center></a></td>
+     <td><center><font size="3">CÁC BỮA ĂN</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 8" style="color:#00FFFF"> <center><font size="6">УРОК 8-Bài 8</font></center></a></td>
+     <td><center><font size="3">ĐỘNG VẬT</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 9" style="color:#00FFFF"> <center><font size="6">УРОК 9-Bài 9</font></center></a></td>
+     <td><center><font size="3">MÀU SẮC</font></center></td>
+  </tr>
+  <tr>
+     <td><a href="bài 10" style="color:#00FFFF"> <center><font size="6">УРОК 10-Bài 10</font></center></a></td>
+     <td><center><font size="3">LỚP HỌC</font></center></td>
+  </tr>
+</center>
+</h2>
+<center><a href="Trang chủ.html" style="color:brown">Trang chủ</a></center>
+<div id="trigger-zone"></div>
+<nav class="navbar" id="myNavbar">
+    <ul>
+        <li><a href="Trang chủ.html">Trang chủ</a></li>
+        <li><a href="Giới thiệu.html">Giới thiệu</a></li>
+        <li><a href="nền.html">Bài học</a></li>
+        <li><a href="donate.html" style="color: #FBC500;">Donate</a></li>
+    </ul>
+</nav>
+<audio id="bgMusic" loop autoplay>
+    <source src="nhạc nền.mp3" type="audio/mpeg">
+</audio>
+<script>
+    const navbar = document.getElementById('myNavbar');
+    const triggerZone = document.getElementById('trigger-zone');
+
+    // Hiện menu khi chuột vào vùng cảm ứng hoặc vào chính menu
+    triggerZone.addEventListener('mouseenter', () => {
+        navbar.classList.add('show');
+    });
+
+    navbar.addEventListener('mouseenter', () => {
+        navbar.classList.add('show');
+    });
+
+    // Ẩn menu khi chuột rời khỏi menu
+    navbar.addEventListener('mouseleave', () => {
+        navbar.classList.remove('show');
+    });
+</script>
+</body>

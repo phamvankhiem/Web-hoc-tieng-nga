@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Kiểm Tra Từ Vựng</title>
+     <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; display: flex; justify-content: center; }
+        .quiz-container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 600px; width: 100%; }
+        h2 { text-align: center; color: #1C3FAA; }
+        .word-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #eee; }
+        .vietnamese { width: 40%; font-weight: bold; color: #333; }
+        .foreign-input { width: 50%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .result-icon { width: 30px; text-align: center; font-size: 20px; }
+        .footer { margin-top: 20px; text-align: center; }
+        #score-display { font-size: 20px; font-weight: bold; margin-top: 15px; color: #3160D8; }
+        button { padding: 10px 25px; background-color: #91C714; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #7aa710; }
+        .correct { border-color: #91C714 !important; background-color: #eaffea; }
+        .wrong { border-color: #D32929 !important; background-color: #ffeaea; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Kiểm Tra Từ Vựng Bài 1</h2>
+    <div id="quiz-content">
+        </div>
+
+    <div class="footer">
+        <button onclick="gradeQuiz()">Nộp bài & Chấm điểm</button>
+        <div id="score-display"></div>
+    </div>
+</div>
+
+<script>
+    // 1. Danh sách 10 từ vựng (Bạn có thể thay đổi ở đây)
+    const vocabulary = [
+        { vn: "Xin chào", ru: "hello" },
+        { vn: "Cảm ơn", ru: "thank you" },
+        { vn: "Tạm biệt", ru: "goodbye" },
+        { vn: "Học sinh", ru: "student" },
+        { vn: "Giáo viên", ru: "teacher" },
+        { vn: "Sách", ru: "book" },
+        { vn: "Gia đình", ru: "family" },
+        { vn: "Nước", ru: "water" },
+        { vn: "Bầu trời", ru: "sky" },
+        { vn: "Mèo", ru: "cat" }
+    ];
+
+    // 2. Hàm tạo giao diện bài kiểm tra
+    function initQuiz() {
+        const container = document.getElementById('quiz-content');
+        vocabulary.forEach((item, index) => {
+            container.innerHTML += `
+                <div class="word-row">
+                    <span class="vietnamese">${index + 1}. ${item.vn}</span>
+                    <input type="text" class="foreign-input" id="word-${index}" placeholder="Dịch sang tiếng Anh...">
+                    <span class="result-icon" id="icon-${index}"></span>
+                </div>
+            `;
+        });
+    }
+
+    // 3. Hàm chấm điểm
+    function gradeQuiz() {
+        let score = 0;
+        vocabulary.forEach((item, index) => {
+            const userInput = document.getElementById(`word-${index}`).value.trim().toLowerCase();
+            const inputField = document.getElementById(`word-${index}`);
+            const iconPlace = document.getElementById(`icon-${index}`);
+
+            if (userInput === item.en.toLowerCase()) {
+                score++;
+                inputField.className = "foreign-input correct";
+                iconPlace.innerHTML = "✅";
+            } else {
+                inputField.className = "foreign-input wrong";
+                iconPlace.innerHTML = "❌";
+                // Hiển thị đáp án đúng nếu muốn (tùy chọn)
+                inputField.title = "Đáp án đúng là: " + item.en;
+            }
+        });
+
+        document.getElementById('score-display').innerHTML = `Kết quả: ${score} / ${vocabulary.length} câu đúng!`;
+    }
+
+    // Chạy hàm tạo bài khi trang web load xong
+    window.onload = initQuiz;
+</script>
+
+</body>
+</html>

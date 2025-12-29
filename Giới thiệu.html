@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - Học Tiếng Nga</title>
+        <style>
+        /* 1. NỀN ĐỎ CHỦ ĐẠO */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: rgb(211, 13, 13); /* Màu đỏ của bạn */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 2. KHỐI TRUNG TÂM (HÌNH CỜ & TIÊU ĐỀ) */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .flag-icon {
+            width: 200px;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 0, 0.5));
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: yellow;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+        }
+
+        /* 3. CHIA 3 MỤC GIỚI THIỆU */
+        .intro-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            width: 90%;
+            margin-bottom: 50px;
+            flex-wrap: wrap; /* Tự xuống hàng trên điện thoại */
+        }
+
+        .intro-card {
+            background: rgba(255, 255, 255, 0.1); /* Nền mờ trắng trên nền đỏ */
+            border: 2px solid yellow;
+            border-radius: 15px;
+            padding: 30px;
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .intro-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .intro-card h3 {
+            color: yellow;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-card p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* NÚT BẮM HÀNH ĐỘNG */
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background-color: yellow;
+            color: #d30d0d;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            box-shadow: 0 0 20px yellow;
+        }
+    </style>
+        <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ĐỊNH DẠNG THANH MENU */
+        .navbar {
+            background-color: #1C3FAA;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            /* LỆNH ẨN: Đẩy menu lên trên (chiều cao menu khoảng 55px) */
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà */
+        }
+
+        /* LỆNH HIỆN: Khi có class 'show', menu sẽ trượt xuống */
+        .navbar.show {
+            transform: translateY(0);
+        }
+
+        /* Vùng cảm ứng: Một dải vô hình ở sát mép trên màn hình */
+        #trigger-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Độ nhạy: rê chuột vào 20px trên cùng sẽ hiện menu */
+            z-index: 999;
+            /* background: rgba(255,0,0,0.2); // Bật dòng này nếu bạn muốn thấy vùng cảm ứng */
+        }
+
+        /* Định dạng nội dung bên trong menu (giữ nguyên từ trước) */
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #F1F5F8;
+            padding: 16px 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover { background-color: #3160D8; }
+
+        .content { padding: 20px; margin-top: 20px; }
+    </style>
+   <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ĐỊNH DẠNG THANH MENU */
+        .navbar {
+            background-color: #1C3FAA;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            
+            /* LỆNH ẨN: Đẩy menu lên trên (chiều cao menu khoảng 55px) */
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease-in-out; /* Hiệu ứng trượt mượt mà */
+        }
+
+        /* LỆNH HIỆN: Khi có class 'show', menu sẽ trượt xuống */
+        .navbar.show {
+            transform: translateY(0);
+        }
+
+        /* Vùng cảm ứng: Một dải vô hình ở sát mép trên màn hình */
+        #trigger-zone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Độ nhạy: rê chuột vào 20px trên cùng sẽ hiện menu */
+            z-index: 999;
+            /* background: rgba(255,0,0,0.2); // Bật dòng này nếu bạn muốn thấy vùng cảm ứng */
+        }
+
+        /* Định dạng nội dung bên trong menu (giữ nguyên từ trước) */
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        .navbar a {
+            display: block;
+            color: #F1F5F8;
+            padding: 16px 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover { background-color: #3160D8; }
+
+        .content { padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="búa-liềm.jpg" alt="Cờ Búa Liềm" class="flag-icon">
+        <h1>ЗДРАВСТВУЙТЕ!</h1>
+        <p style="font-size: 1.5rem; color: #ffeb3b; margin-top: 10px;">Cổng thông tin học tập ngôn ngữ và văn hóa Nga</p>
+    </div>
+
+    <div class="intro-container">
+        <div class="intro-card">
+            <h3>🌍 Giới Thiệu</h3>
+            <p>Trang web được xây dựng nhằm kết nối những người yêu thích tiếng Nga, cung cấp một số từ cơ bản trong giao tiếp hàng ngày hoàn toàn miễn phí.</p>
+            <a href="https://www.youtube.com/watch?v=aqeVinGiKqs" class="cta-button">HỌC PHÁT ÂM CÁC CHỮ CÁI ➔</a>
+        </div>
+
+        <div class="intro-card">
+            <h3>📚 Phương Pháp</h3>
+            <p>Luyện tập nghe, gõ từ vựng trực quan và các bài kiểm tra thực tế giúp bạn nắm vững ngôn ngữ trong thời gian ngắn nhất.</p>
+            <a href="nền.html" class="cta-button">VÀO MỤC BÀI HỌC ➔</a>
+        </div>
+
+        <div class="intro-card">
+            <h3>🤝 Cộng Đồng</h3>
+            <p>Tham gia vào mạng lưới học viên rộng lớn, chia sẻ kinh nghiệm du học, làm việc và giao tiếp thường ngày bằng tiếng Nga.</p>
+            <a href="https://www.facebook.com/groups/hoctiengngacoban" class="cta-button">VÀO GROUP FACEBOOK➔</a>
+        </div>
+    </div>
+
+    <a href= "nền.html" class="cta-button">BẮT ĐẦU HÀNH TRÌNH ➔</a>
+
+    <footer style="margin-bottom: 30px; opacity: 0.7;">
+        &copy; 2024 Bản quyền thuộc về Phạm Văn Khiêm
+    </footer>
+    <audio id="bgMusic" loop autoplay>
+    <source src="nhạc nền.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
