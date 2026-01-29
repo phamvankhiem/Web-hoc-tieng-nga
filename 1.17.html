@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Bài Tập Nghe và Gõ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f80202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .lesson-box {
+            background: rgb(180, 130, 38);
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            text-align: center;
+        }
+        #word-display {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #1A389F;
+            min-height: 40px;
+        }
+        #feedback {
+            margin-top: 20px;
+            font-size: 18px;
+            min-height: 25px;
+        }
+        #user-input {
+            padding: 12px;
+            width: 70%;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        #check-button {
+            padding: 12px 20px;
+            background-color: #4CAF50; 
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #check-button:hover {
+            background-color: #45a049;
+        }
+        audio[controls] {
+            margin-bottom: 15px;
+        }
+    </style>
+      <style>
+        /* 1. Thiết lập chung cho toàn trang */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 2. Định dạng thanh điều hướng */
+        .navbar {
+            background-color: #1C3FAA; /* Màu xanh đậm từ danh sách mã màu của bạn */
+            overflow: hidden;
+            position: fixed; /* Cố định trên cùng */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* Căn giữa các mục menu */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* 3. Định dạng các thẻ danh sách */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* 4. Định dạng các đường dẫn */
+        .navbar a {
+            display: block;
+            color: #F1F5F8; /* Màu trắng xám nhạt */
+            text-align: center;
+            padding: 16px 25px;
+            text-decoration: none; /* Bỏ gạch chân */
+            font-weight: bold;
+            transition: 0.3s; /* Hiệu ứng mượt mà */
+        }
+
+        /* 5. Hiệu ứng khi di chuột vào (Hover) */
+        .navbar a:hover {
+            background-color: #3160D8; /* Màu xanh sáng hơn khi di chuột */
+            color: #FFFFFF;
+        }
+
+        /* 6. Tạo khoảng trống phía trên nội dung để không bị thanh menu đè lên */
+        .content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lesson-box">
+        <div id="word-display">Меня зовут...-Tên tôi là...</div>
+
+        <p>Bấm nghe và gõ lại từ:</p>
+        <audio controls id="word-audio">
+            <source src="1x.117.mp3" type="audio/mp3">
+        </audio>
+        <p>
+        <input type="text" id="user-input" placeholder="Gõ từ bạn nghe được..." oninput="hideWord()">
+        <button id="check-button" onclick="checkWord()">Kiểm Tra</button>
+        <div id="feedback"></div></p>
+        <P><a href="1.18.html" style="text-decoration: none; font-size: 24px; color: #aa1ca5;">Tiếp theo &raquo;</a></P>
+    </div>
+
+    <audio id="sound-correct" src="đúng.mp3"></audio> 
+    <audio id="sound-incorrect" src="sai.mp3"></audio> 
+    <script>
+        const correctWord = "меня зовут";
+        function hideWord() {
+            const inputElement = document.getElementById('user-input');
+            const wordDisplayElement = document.getElementById('word-display');
+            if (inputElement.value.length > 0) {
+                wordDisplayElement.style.visibility = 'hidden'; 
+            } else {
+                wordDisplayElement.style.visibility = 'visible';
+            }
+        }
+        function checkWord() {
+            const userInput = document.getElementById('user-input').value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Xử lý bỏ dấu tiếng Việt
+            const feedbackElement = document.getElementById('feedback');
+            const wordDisplayElement = document.getElementById('word-display');
+            const soundCorrect = document.getElementById('sound-correct');
+            const soundIncorrect = document.getElementById('sound-incorrect');
+            wordDisplayElement.style.visibility = 'visible'; 
+
+            if (userInput === correctWord) {
+                            soundCorrect.play(); 
+                feedbackElement.innerHTML = "✅ **Chính xác!** Tuyệt vời!";
+                feedbackElement.style.color = "green";
+                document.getElementById('user-input').disabled = true;
+                document.getElementById('check-button').disabled = true;
+                
+            } else {
+                soundIncorrect.play(); 
+                feedbackElement.innerHTML = `❌ **Sai rồi!** Hãy thử lại. (Đáp án đúng: "${wordDisplayElement.textContent}")`;
+                feedbackElement.style.color = "red";
+            }
+        }
+    </script>
+    <nav class="navbar" id="myNavbar">
+    <ul>
+        <li><a href="Trang chủ.html">Trang chủ</a></li>
+        <li><a href="Giới thiệu.html">Giới thiệu</a></li>
+        <li><a href="Bắt đầu.html">Bài học</a></li>
+        <li><a href="donate.html" style="color: #FBC500;">Donate</a></li>
+    </ul>
+</nav>
+
+<script>
+    const navbar = document.getElementById('myNavbar');
+    const triggerZone = document.getElementById('trigger-zone');
+    triggerZone.addEventListener('mouseenter', () => {
+        navbar.classList.add('show');
+    });
+
+    navbar.addEventListener('mouseenter', () => {
+        navbar.classList.add('show');
+    });
+
+    // Ẩn menu khi chuột rời khỏi menu
+    navbar.addEventListener('mouseleave', () => {
+        navbar.classList.remove('show');
+    });
+</script>
+</body>
+</html>

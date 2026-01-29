@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu Học Tiếng Nga</title>
+    <style>
+        /* --- 1. NỀN ĐỎ TOÀN TRANG --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #d30d0d; /* Đỏ đậm rực rỡ */
+            color: #ffffff;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- 2. KHỐI GIỚI THIỆU (NỀN XANH LÁ) --- */
+        .profile-box {
+            background: #1b5e20; /* Xanh lá rừng */
+            border: 4px solid #ffd700; /* Viền vàng */
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #ffd700;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1, h2, h3 {
+            color: #ffd700; /* Tất cả tiêu đề màu vàng */
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .highlight-gold {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        /* --- 3. PHẦN NỘI DUNG HỌC --- */
+        .content-card {
+            background: #1b5e20; /* Xanh lá */
+            border: 3px solid #ffd700; /* Viền vàng */
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .method-item {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        /* --- 4. MỤC GÓP Ý (MAIL) --- */
+        .feedback-box {
+            background: #004d40; /* Xanh lá đậm hơn */
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            background: #f1f1f1;
+            color: #333;
+        }
+
+        .btn-submit {
+            background: #ffd700;
+            color: #1b5e20;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: white;
+            color: #d30d0d;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .method-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-box">
+            <img src="anh-ca-nhan.jpg" alt="Phạm Văn Khiêm" class="profile-img">
+            <h1>Phạm Văn Khiêm</h1>
+            <p>Sáng lập dự án Học Tiếng Nga - <span class="highlight-gold">Здраствуйте!</span></p>
+        </div>
+
+        <div class="content-card">
+            <h2>Nội Dung Học Tập</h2>
+            <p>Trang web tập trung vào <span class="highlight-gold">Từ vựng giao tiếp thực hành</span>. Thay vì học vẹt, bạn sẽ được học từ qua âm thanh, được viết lại theo chữ đã học và có thể luyện lại các chữ đó sau bài học.</p>
+            
+            <h3>Nguồn gốc Chữ cái Cyrillic-TIẾNG NGA: NGÔN NGỮ CỦA TÂM HỒN VÀ DI SẢN</h3>
+            <p><span class="highlight-gold">Hệ chữ cái Nga </span>được hình thành từ thế kỷ IX nhờ công lao của hai nhà truyền giáo <span class="highlight-gold">Kirill và Methodius</span>. Họ đã dựa trên ký tự Hy Lạp để tạo ra bộ chữ phù hợp với âm thanh đặc thù của ngôn ngữ Slav.</p>
+            <p><span class="highlight-gold">Ngôn ngữ của khoa học và văn chương: </span>Học tiếng Nga là bạn đang mở ra cánh cửa tiến vào kho tàng tri thức khổng lồ của nhân loại. Đó là ngôn ngữ nguyên bản của những đại văn hào lừng lẫy như Pushkin, Tolstoy, Dostoevsky; là ngôn ngữ của những bản giao hưởng bất hủ từ Tchaikovsky; và là ngôn ngữ đầu tiên vang lên ngoài vũ trụ bởi phi hành gia Yuri Gagarin.</p>
+            <p><span class="highlight-gold">Tại sao tiếng Nga lại quyến rũ?</span> Tiếng Nga nổi tiếng với cấu trúc ngữ pháp chặt chẽ và hệ thống biến cách phong phú, tạo nên khả năng diễn đạt vô cùng linh hoạt và giàu cảm xúc. Người ta thường nói, tiếng Nga có thể "vẽ" nên bức tranh phong cảnh chỉ bằng vài từ ngữ, hoặc lột tả những góc khuất sâu thẳm nhất trong tâm hồn con người một cách tinh tế mà không ngôn ngữ nào khác làm được.</p>
+            <p><span class="highlight-gold">Lời nhắn nhủ cho người mới bắt đầu:</span> Đừng để bảng chữ cái lạ lẫm hay những quy tắc biến cách làm bạn nản lòng! Tiếng Nga giống như một tòa lâu đài nguy nga, chỉ cần bạn nắm được "chiếc chìa khóa" là bảng chữ cái và phát âm căn bản, bạn sẽ thấy mọi thứ dần trở nên logic và đầy thú vị.
+                <center><p style="font-family: 'Pattaya', sans-serif; font-size: 20px; color: red;">“Học một ngoại ngữ mới là sống thêm một cuộc đời mới.” Hãy cùng chúng tôi bắt đầu cuộc hành trình khám phá nước Nga bắt đầu từ những từ vựng đầu tiên ngay hôm nay!</p></center>
+            <div class="method-grid">
+                <div class="method-item">
+                    <h3 style="font-size: 1rem;">Luyện chữ dễ dàng</h3>
+                    <p style="font-size: 0.9rem;">Hãy liên tưởng các chữ cái Nga với các vật dụng quen thuộc trong tiếng Việt để nhớ mặt chữ nhanh hơn.</p>
+                </div>
+                <div class="method-item">
+                    <h3 style="font-size: 1rem;">Mẹo ghi nhớ</h3>
+                    <p style="font-size: 0.9rem;">Học 5 từ vựng mỗi ngày và luyện gõ bàn phím tiếng Nga để tạo phản xạ tay - mắt.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-box">
+            <h2>Hòm thư góp ý</h2>
+            <p>Gửi ý kiến của bạn trực tiếp đến email của người viết web:</p>
+            
+            <form action="mailto:your-email@gmail.com" method="post" enctype="text/plain">
+                <label>Tên của bạn:</label>
+                <input type="text" name="name" required>
+                
+                <label>Nội dung góp ý:</label>
+                <textarea name="comments" rows="4" required></textarea>
+                
+                <center>
+                    <button type="submit" class="btn-submit">Gửi đóng góp ngay</button>
+                </center>
+            </form>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; font-size: 0.8rem;">© 2024 Phạm Văn Khiêm - Học Tiếng Nga</p>
+    </div>
+
+</body>
+</html>

@@ -39,7 +39,6 @@
 
         .status-icon { width: 10%; text-align: center; font-size: 20px; }
 
-        /* Hiệu ứng đúng/sai */
         .correct { border-color: yellow !important; background-color: #eaffea; color: black; }
         .wrong { border-color: white !important; background-color: #ffcccc; color: black; }
 
@@ -67,6 +66,29 @@
             text-align: center;
             text-shadow: 1px 1px 2px black;
         }
+
+        /* --- NÚT CHUYỂN BÀI Ở GÓC PHẢI --- */
+        .next-lesson-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: yellow;
+            color: #1b5e20; /* Màu xanh lá cho hợp tông box */
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+            border: 2px solid #1b5e20;
+            z-index: 1001;
+        }
+
+        .next-lesson-btn:hover {
+            background-color: white;
+            color: #d30d0d;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -80,6 +102,8 @@
         <div id="score-result"></div>
     </div>
 
+    <a href="2.11.html" class="next-lesson-btn">BÀI HỌC TIẾP THEO ➔</a>
+
     <audio id="winSound">
         <source src="https://www.myinstants.com/media/sounds/tada.mp3" type="audio/mpeg">
     </audio>
@@ -87,15 +111,15 @@
 <script>
     const russianData = [
         { ru: "Привет", vi: "xin chào" },
-        { ru: "о", vi: "cảm ơn" },
-        { ru: "Книга", vi: "sách" },
-        { ru: "Хлеб", vi: "bánh mì" },
-        { ru: "Воada", vi: "nước" },
-        { ru: "Студент", vi: "sinh viên" },
-        { ru: "Семья", vi: "gia đình" },
-        { ru: "Город", vi: "thành phố" },
-        { ru: "Учитель", vi: "giáo viên" },
-        { ru: "Работа", vi: "công việc" }
+        { ru: "Доброе утро!", vi: "chào buổi sáng" },
+        { ru: "Добрый день!", vi: "chào buổi chiều" },
+        { ru: "Добрый вечер!", vi: "chào buổi tối" },
+        { ru: "Спокойной ночи!", vi: "chúc ngủ ngon" },
+        { ru: "Как вас зовут?", vi: "tên của bạn là gì" },
+        { ru: "Меня зовут...", vi: "tên tôi là" },
+        { ru: "Откуда вы?", vi: "bạn từ đâu đến?" },
+        { ru: "Как дела?", vi: "bạn có khỏe không?" },
+        { ru: "Хорошо, спасибо", vi: "tôi khỏe, cảm ơn bạn" }
     ];
 
     function loadQuiz() {
@@ -131,11 +155,10 @@
         const resultDiv = document.getElementById('score-result');
         resultDiv.innerHTML = `Kết quả: ${score} / 10`;
 
-        // LỆNH PHÁT ÂM THANH KHI ĐÚNG TỪ 7 CÂU TRỞ LÊN
         if (score >= 7) {
             const audio = document.getElementById("winSound");
             audio.play();
-            resultDiv.innerHTML += "<br>🎉 XUẤT SẮC! BẠN ĐÃ ĐẠT!";
+            resultDiv.innerHTML += "<br>🎉 XUẤT SẮC! BẠN ĐẠT!";
         } else {
             resultDiv.innerHTML += "<br>✍️ Cố gắng thêm chút nữa nhé!";
         }

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin tác giả - Phạm Văn Khiêm</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: radial-gradient(circle, #b30000 0%, #660000 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        /* PHẦN BÊN TRÁI: HÌNH ẢNH */
+        .profile-left {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            border-right: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #ffd700;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .profile-left h2 {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .profile-left p {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* PHẦN BÊN PHẢI: THÔNG TIN */
+        .profile-right {
+            flex: 1.5;
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        .info-section {
+            margin-bottom: 25px;
+        }
+
+        .info-section h3 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            display: inline-block;
+            margin-bottom: 10px;
+            padding-right: 20px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        /* PHẦN DONATE */
+        .donate-box {
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px dashed #ffd700;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .qr-code {
+            width: 150px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .profile-card { flex-direction: column; }
+            .profile-left { border-right: none; border-bottom: 1px solid rgba(255, 215, 0, 0.3); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="profile-left">
+            <img src="anh-ca-nhan.jpg" alt="Phạm Văn Khiêm" class="profile-img">
+            <h2>Phạm Văn Khiêm</h2>
+            <p>Người sáng lập dự án</p>
+            <a href="Trang chủ.html" class="back-btn">← Quay lại trang chủ</a>
+        </div>
+
+        <div class="profile-right">
+            
+            <div class="info-section">
+                <h3>🌍 Lai lịch & Giới thiệu</h3>
+                <p>Tôi là một người yêu mến ngôn ngữ và văn hóa Nga. Với mong muốn giúp cộng đồng người Việt tiếp cận tiếng Nga một cách đơn giản và hiệu quả nhất, tôi đã xây dựng nên nền tảng này.</p>
+            </div>
+
+            <div class="info-section">
+                <h3>📍 Địa chỉ liên hệ</h3>
+                <p><b>Địa chỉ:</b> [Nhập địa chỉ của bạn tại đây]</p>
+                <p><b>Email:</b> [Nhập email của bạn tại đây]</p>
+                <p><b>Facebook:</b> fb.com/phamvankhiem</p>
+            </div>
+
+            <div class="info-section">
+                <h3>💰 Ủng hộ dự án (Donate)</h3>
+                <p>Nếu bạn thấy trang web này hữu ích, hãy mời tôi một ly cà phê để duy trì máy chủ và phát triển thêm các bài học mới nhé!</p>
+                
+                <div class="donate-box">
+                    <p><b>Ngân hàng:</b> [Tên Ngân Hàng - Ví dụ: MB Bank]</p>
+                    <p><b>Số tài khoản:</b> [Số tài khoản của bạn]</p>
+                    <p><b>Chủ tài khoản:</b> PHAM VAN KHIEM</p>
+                    <img src="ma-qr-banking.jpg" alt="Mã QR Donate" class="qr-code">
+                    <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Quét mã để chuyển khoản nhanh</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

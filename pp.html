@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Học Tiếng Nga - Bản Cao Cấp</title>
+    <style>
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Hiệu ứng ánh sáng rọi tâm (Spotlight) */
+            background: radial-gradient(circle, #e62e2e 0%, #800000 100%);
+            font-family: 'Times New Roman', Times, serif; /* Font chữ có chân cho sang trọng */
+            overflow: hidden;
+        }
+
+        /* Khung trang trí chính */
+        .hero-card {
+            position: relative;
+            text-align: center;
+            padding: 60px 40px;
+            width: 90%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.3); /* Nền đen mờ phía sau */
+            border: 4px double #ffd700; /* Viền đôi màu vàng đặc trưng */
+            border-radius: 2px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.6);
+        }
+
+        /* Họa tiết trang trí ở 4 góc */
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #ffd700;
+        }
+        .top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+        .top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+        .bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+        .bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+        h1 {
+            font-size: 4rem;
+            color: #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            /* Đổ bóng cho chữ có cảm giác khối 3D */
+            text-shadow: 3px 3px 0px #4d0000, 6px 6px 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 10px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        p {
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        /* Nút bấm vàng ánh kim */
+        .btn-gold {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(to bottom, #ffd700 0%, #b8860b 100%);
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            border: 2px solid #ffd700;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+            background: #fff;
+            color: #e62e2e;
+        }
+
+        /* Biểu tượng điện Kremlin mờ ảo phía sau */
+        .bg-symbol {
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.05;
+            color: white;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-card">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <h2>Bắt đầu với chữ cái</h2>
+        <h1>TIẾNG NGA</h1>
+        <p>
+                Đánh thức niềm đam mê với ngôn ngữ vĩ đại nhất thế giới. <br>
+                Từ những nét vẽ <b>Cyrillic</b> đầu tiên đến khả năng tư duy như một người bản xứ. 
+                Chúng tôi tạo ra một không gian học tập đẳng cấp, nơi văn hóa và tri thức giao thoa.
+            </p>
+        <a href="https://www.youtube.com/watch?v=aqeVinGiKqs" class="btn-gold">BẮT ĐẦU NGAY</a>
+    </div>
+
+</body>
+</html>
