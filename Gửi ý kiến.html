@@ -3,46 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gửi ý kiến phản hồi</title>
+    <title>Gửi thành công</title>
     <style>
-        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f9; margin: 0; }
-        .container { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; width: 350px; }
-        
-        /* Ẩn thông báo lúc đầu */
-        #success-message { display: none; }
-
-        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        
-        .btn { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-size: 16px; }
-        .btn:hover { background-color: #45a049; }
-        .btn-back { background-color: #007bff; margin-top: 15px; }
-        .btn-back:hover { background-color: #0056b3; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .success-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .icon {
+            font-size: 50px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .btn-home {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            display: inline-block;
+        }
+        .btn-home:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div id="feedback-form">
-        <h2>Gửi ý kiến của bạn</h2>
-        <input type="text" placeholder="Tên của bạn">
-        <textarea placeholder="Nhập ý kiến tại đây..." rows="4"></textarea>
-        <button class="btn" onclick="submitForm()">Gửi ngay</button>
+    <div class="success-card">
+        <div class="icon">✔️</div>
+        <h2>Thông báo</h2>
+        <p>Ý kiến của bạn đã được gửi thành công!</p>
+        
+        <a href="nền.html" class="btn-home">
+            Ấn vào đây để về trang bài học
+        </a>
     </div>
-
-    <div id="success-message">
-        <h2 style="color: #4CAF50;">Thành công!</h2>
-        <p>Ý kiến của bạn đã được gửi.</p>
-        <a href="nền.html" class="btn btn-back">Ấn vào đây để về trang bài học</a>
-    </div>
-</div>
-
-<script>
-    function submitForm() {
-        // Giả lập việc gửi dữ liệu
-        document.getElementById('feedback-form').style.display = 'none';
-        document.getElementById('success-message').style.display = 'block';
-    }
-</script>
 
 </body>
 </html>
